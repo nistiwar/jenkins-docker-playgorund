@@ -1,1 +1,1 @@
-FROM node:nginx
+FROM nginx
