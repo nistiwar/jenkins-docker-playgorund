@@ -6,7 +6,7 @@ node {
 	}
 	stage('stop old container') {
 		sh 'docker ps -f name=laks-nginx -q | xargs --no-run-if-empty docker stop'
-		sh 'docker ps -a -fname=laks-nginx -q | xargs -r docker rm'
+		sh 'docker ps -a -fname=laks-nginx -q | xargs -r docker123 rm'
 	}
 	stage('copy deployment file') {
 		sh 'cp index.html /opt/html/'
