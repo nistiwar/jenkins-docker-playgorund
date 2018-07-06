@@ -10,6 +10,7 @@ node {
 	}
 	stage('copy deployment file') {
 		sh 'sudo mkdir -p /opt/html'
+		sh 'sudo chown jenkins:jenkins -R /opt/html'
 		sh 'cp index.html /opt/html/'
 	}
 	stage('docker-run') {
