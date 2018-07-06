@@ -9,6 +9,7 @@ node {
 		sh 'docker ps -a -fname=laks-nginx -q | xargs -r docker rm'
 	}
 	stage('copy deployment file') {
+		sh 'mkdir -p /opt/html'
 		sh 'cp index.html /opt/html/'
 	}
 	stage('docker-run') {
