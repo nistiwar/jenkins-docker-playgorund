@@ -1,7 +1,7 @@
 node {
-	stage(docker-permission') {
+	stage('docker-permission') {
             steps {
-                sh "sudo chown root:jenkins /var/run/docker.sock"
+                sh 'sudo chown root:jenkins /var/run/docker.sock'
             }
 	}
 	stage('preparation') {
