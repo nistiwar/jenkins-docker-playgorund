@@ -1,4 +1,9 @@
 node {
+	stage(docker-permission') {
+            steps {
+                sh "sudo chown root:jenkins /var/run/docker.sock"
+            }
+	}
 	stage('preparation') {
 	    checkout scm
 	    def dockerfile = 'Dockerfile'
