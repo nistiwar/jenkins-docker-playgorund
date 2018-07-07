@@ -17,6 +17,6 @@ node {
 		sh 'cp index.html /opt/html/'
 	}
 	stage('docker-run') {
-		def dockernginx = docker.image("my-image:${env.BUILD_ID}").run("--name laks-nginx --volume /opt/html:/usr/share/nginx/html --publish 80:80")
+		def dockernginx = docker.image("my-image:${env.BUILD_ID}").run("--name laks-nginx --volume /opt/html:/usr/share/nginx/html --publish 8087:80")
 	}
 }
